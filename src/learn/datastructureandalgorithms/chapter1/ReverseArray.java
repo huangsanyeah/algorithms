@@ -9,8 +9,10 @@ public class ReverseArray {
     public static void main(String[] args) {
 //        int[] arrays = {1, 2, 3, 4, 5};
 //        ReverseArray.reverseArray(arrays);
+
         //method1
-        ReverseArray.s1_1();
+        //ReverseArray.s1_1();
+
         //method2
         ReverseArray.s1_2();
     }
