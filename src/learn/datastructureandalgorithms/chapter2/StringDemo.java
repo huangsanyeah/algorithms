@@ -6,7 +6,8 @@ public class StringDemo {
 //        String str="12345";
 //        String subStr="25";
 //        System.out.println(str.contains(subStr));
-        s1();
+
+//        s1();
         s2();
     }
 
