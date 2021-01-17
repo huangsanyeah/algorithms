@@ -2,6 +2,9 @@ package datastructure.queue;
 
 import java.util.Scanner;
 
+/**
+ * 用数组实现队列
+ */
 public class ArrayQueueDemo {
 
 	public static void main(String[] args) {
@@ -65,7 +68,7 @@ class ArrayQueue {
 	private int maxSize; // 表示数组的最大容量
 	private int front; // 队列头
 	private int rear; // 队列尾
-	private int[] arr; // 该数据用于存放数据, 模拟队列
+	private final int[] arr; // 该数据用于存放数据, 模拟队列
 
 	// 创建队列的构造器
 	public ArrayQueue(int arrMaxSize) {
