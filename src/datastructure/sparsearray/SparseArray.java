@@ -3,7 +3,7 @@ package datastructure.sparsearray;
 import java.io.*;
 
 /**
- * 二维数组与稀疏数组的转化
+ * 二维数组与稀疏数组的转化，持久化磁盘并且读取出来
  */
 public class SparseArray {
 
