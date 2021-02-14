@@ -15,10 +15,10 @@ public class Calculator {
         ArrayStack2 operStack = new ArrayStack2(10);
         //定义需要的相关变量
         int index = 0;//用于扫描
-        int num1 = 0;
-        int num2 = 0;
-        int oper = 0;
-        int res = 0;
+        int num1;
+        int num2;
+        int oper;
+        int res;
         char ch = ' '; //将每次扫描得到char保存到ch
         String keepNum = ""; //用于拼接 多位数
         //开始while循环的扫描expression
