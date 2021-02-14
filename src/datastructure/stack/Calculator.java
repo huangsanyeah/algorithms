@@ -82,12 +82,10 @@ public class Calculator {
             }
         }
 
-        //当表达式扫描完毕，就顺序的从 数栈和符号栈中pop出相应的数和符号，并运行.
-        while (true) {
-            //如果符号栈为空，则计算到最后的结果, 数栈中只有一个数字【结果】
-            if (operStack.isEmpty()) {
-                break;
-            }
+
+        //如果符号栈为空，则计算到最后的结果, 数栈中只有一个数字【结果】
+        while (!operStack.isEmpty()) {
+            //当表达式扫描完毕，就顺序的从 数栈和符号栈中pop出相应的数和符号，并运行.
             num1 = numStack.pop();
             num2 = numStack.pop();
             oper = operStack.pop();
