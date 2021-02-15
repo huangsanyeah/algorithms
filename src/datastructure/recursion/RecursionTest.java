@@ -1,5 +1,7 @@
 package datastructure.recursion;
 
+import java.math.BigInteger;
+
 /**
  * @author huangweiyue
  * @description 阶乘 递归
@@ -10,12 +12,19 @@ public class RecursionTest {
         //通过打印问题，回顾递归调用机制
 //        test(4);
 
-        int res = factorial(5);
+        //FIXME 不管是int 还是long 会存在阶乘溢出的情况 所以可以更改方法为BigInteger
+        long res = factorial(5);
         System.out.println("res=" + res);
+
+        int a = 5;
+        BigInteger s = fac(new BigInteger(Integer.toString(a)));
+        System.out.println(s);
+        System.out.println(s.toString());
+        System.out.println(s.toString().length());
     }
 
     //打印问题.
-    public static void test(int n) {
+    private static void test(int n) {
         if (n > 2) {
             test(n - 1);
         } //else {
@@ -24,11 +33,31 @@ public class RecursionTest {
     }
 
     //阶乘问题
-    public static int factorial(int n) {
+    private static long factorial(int n) {
         if (n == 1) {
             return 1;
         } else {
-            return factorial(n - 1) * n; // 1 * 2 * 3
+            long result = factorial(n - 1) * n; // 1 * 2 * 3
+            if (result >= Long.MAX_VALUE) {
+                System.out.println("int值越界");
+            } else {
+                System.out.println("int值在界内");
+            }
+            return result;
         }
     }
+
+    /**
+     * 大数实现阶乘 防止越界
+     *
+     * @param num
+     */
+    private static BigInteger fac(BigInteger num) {
+        if (num.compareTo(BigInteger.ONE) == 0) {
+            return BigInteger.ONE;
+        } else {
+            return num.multiply(fac(num.subtract(BigInteger.ONE)));
+        }
+    }
+
 }
