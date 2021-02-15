@@ -57,6 +57,7 @@ public class Queue8 {
             // 说明
             //1. array[i] == array[n]  表示判断 第n个皇后是否和前面的n-1个皇后在同一列
             //2. Math.abs(n-i) == Math.abs(array[n] - array[i]) 表示判断第n个皇后是否和第i皇后是否在同一斜线
+            //左上方 右上方 这个地方是最难理解的 ！
             // n = 1  放置第 2列 1 n = 1 array[1] = 1
             // Math.abs(1-0) == 1  Math.abs(array[n] - array[i]) = Math.abs(1-0) = 1
             //3. 判断是否在同一行, 没有必要，n 每次都在递增
