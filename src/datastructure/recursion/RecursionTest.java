@@ -5,17 +5,20 @@ import java.math.BigInteger;
 /**
  * @author huangweiyue
  * @description 阶乘 递归
+ * 当程序执行到一个方法，都会开辟出一个独立的栈空间，每个空间的局部变量是独立的
  * @date Created in 2021-02-14
  */
 public class RecursionTest {
     public static void main(String[] args) {
-        //通过打印问题，回顾递归调用机制
-//        test(4);
+        //1.通过打印问题，回顾递归调用机制
+        //注意输出的结果，是2,3,4 实际上递归时，4被最先压入栈，紧接着3,2  出栈的时候2最先出，然后3,4依次
+        test(4);
 
-        //FIXME 不管是int 还是long 会存在阶乘溢出的情况 所以可以更改方法为BigInteger
+        //2.阶乘 FIXME 不管是int 还是long 会存在阶乘溢出的情况 所以可以更改方法为BigInteger
         long res = factorial(5);
         System.out.println("res=" + res);
 
+        //3.使用BigInteger实现阶乘
         int a = 5;
         BigInteger s = fac(new BigInteger(Integer.toString(a)));
         System.out.println(s);
