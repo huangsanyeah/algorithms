@@ -22,8 +22,8 @@ public class SelectSort {
 
     public static void main(String[] args) {
         int[] arr = {101, 34, 119, 1, -1, 90, 123};
-        selectSort(arr);
-//        testSort(arr);
+//        selectSort(arr);
+        testSort(arr);
         //从大到小排序改法见代码
         System.out.println("从小到大排序后");
         System.out.println(Arrays.toString(arr));
@@ -149,22 +149,26 @@ public class SelectSort {
     }
 
 
+    /**
+     * 练习
+     * @param array
+     */
     private static void testSort(int[] array) {
-        int minIndex = 0;
-        int min = array[0];
-        for (int j = 1; j < array.length; j++) {
-            if (min > array[j]) {
-                min = array[j];
-                minIndex = j;
+        for (int i = 0; i < array.length - 1; i++) {
+            int minIndex = i;
+            int min = array[i];
+            for (int j = i + 1; j < array.length; j++) {
+                //该改为小于号就是从大到小
+                if (min > array[j]) {
+                    min = array[j];
+                    minIndex = j;
+                }
+            }
+            if (minIndex != i) {
+                //注意这里的交换逻辑
+                array[minIndex] = array[i];
+                array[i] = min;
             }
         }
-        if (minIndex != 0) {
-            //注意这里的交换逻辑
-            array[minIndex] = array[0];
-            array[0] = min;
-        }
-        System.out.println("第1轮后~~");
-        System.out.println(Arrays.toString(array));
-
     }
 }
