@@ -1,7 +1,6 @@
 package datastructure.sort;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Arrays;
 
 /**
  * 选择排序
@@ -10,33 +9,31 @@ import java.util.Date;
 public class SelectSort {
 
     public static void main(String[] args) {
-        //int [] arr = {101, 34, 119, 1, -1, 90, 123};
+        int [] arr = {101, 34, 119, 1, -1, 90, 123};
+        selectSort(arr);
+        System.out.println("排序后");
+        System.out.println(Arrays.toString(arr));
 
         //创建要给80000个的随机的数组
-        int[] arr = new int[80000];
-        for (int i = 0; i < 80000; i++) {
-            arr[i] = (int) (Math.random() * 8000000); // 生成一个[0, 8000000) 数
-        }
-
-        System.out.println("排序前");
-        //System.out.println(Arrays.toString(arr));
-
-        Date data1 = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String date1Str = simpleDateFormat.format(data1);
-        System.out.println("排序前的时间是=" + date1Str);
-
-        selectSort(arr);
-
-
-        Date data2 = new Date();
-        String date2Str = simpleDateFormat.format(data2);
-        System.out.println("排序前的时间是=" + date2Str);
-
-        //System.out.println("排序后");
-        //System.out.println(Arrays.toString(arr));
-
-
+//        int[] arr = new int[80000];
+//        for (int i = 0; i < 80000; i++) {
+//            arr[i] = (int) (Math.random() * 8000000); // 生成一个[0, 8000000) 数
+//        }
+//
+//        System.out.println("排序前");
+//        //System.out.println(Arrays.toString(arr));
+//
+//        Date data1 = new Date();
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        String date1Str = simpleDateFormat.format(data1);
+//        System.out.println("排序前的时间是=" + date1Str);
+//
+//        selectSort(arr);
+//
+//
+//        Date data2 = new Date();
+//        String date2Str = simpleDateFormat.format(data2);
+//        System.out.println("排序前的时间是=" + date2Str);
     }
 
     //选择排序
@@ -68,13 +65,13 @@ public class SelectSort {
 
 		/*
 
-		//使用逐步推导的方式来，讲解选择排序
+		//暴力解法， 使用逐步推导的方式来，讲解选择排序
 		//第1轮
 		//原始的数组 ： 	101, 34, 119, 1
 		//第一轮排序 :   	1, 34, 119, 101
 		//算法 先简单--》 做复杂， 就是可以把一个复杂的算法，拆分成简单的问题-》逐步解决
 
-		//第1轮
+		//第1轮，【遍历并比较】，假设第一个数就是最小的，然后去遍历，得出第一轮真正的最小值以及索引
 		int minIndex = 0;
 		int min = arr[0];
 		for(int j = 0 + 1; j < arr.length; j++) {
@@ -85,7 +82,7 @@ public class SelectSort {
 		}
 
 
-		//将最小值，放在arr[0], 即交换
+		//将最小值，放在arr[0], 即【交换】
 		if(minIndex != 0) {
 			arr[minIndex] = arr[0];
 			arr[0] = min;
