@@ -3,7 +3,10 @@ package datastructure.sort;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-//选择排序
+/**
+ * 选择排序
+ * 先暴力解法 再找共同规律 再抽取
+ */
 public class SelectSort {
 
     public static void main(String[] args) {
