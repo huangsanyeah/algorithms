@@ -3,15 +3,28 @@ package datastructure.sort;
 import java.util.Arrays;
 
 /**
- * 选择排序
+ * 选择排序，时间复杂度：O(n^2)
  * 先暴力解法 再找共同规律 再抽取
+ * 原始的数组 ： 101, 34, 119, 1
+ * 第一轮排序 :   1, 34, 119, 101
+ * 第二轮排序 :   1, 34, 119, 101
+ * 第三轮排序 :   1, 34, 101, 119
+ * <p>
+ * 说明：
+ * 1. 选择排序一共有 （数组大小 - 1） 轮排序
+ * 2. 每1轮排序，又是一个循环, 循环的规则(代码)
+ * 2.1先假定当前这个数是最小数
+ * 2.2 然后和后面的每个数进行比较，如果发现有比当前数更小的数，就重新确定最小数，并得到下标
+ * 2.3 当遍历到数组的最后时，就得到本轮最小数和下标
+ * 2.4 交换 [代码中再继续说 ]
  */
 public class SelectSort {
 
     public static void main(String[] args) {
-        int [] arr = {101, 34, 119, 1, -1, 90, 123};
+        int[] arr = {101, 34, 119, 1, -1, 90, 123};
         selectSort(arr);
-        System.out.println("排序后");
+        //从大到小排序改法见代码
+        System.out.println("从小到大排序后");
         System.out.println(Arrays.toString(arr));
 
         //创建要给80000个的随机的数组
@@ -46,6 +59,7 @@ public class SelectSort {
             int minIndex = i;
             int min = arr[i];
             for (int j = i + 1; j < arr.length; j++) {
+                //目前是从小到大，改成从大到小只需要把这里改为<即可
                 if (min > arr[j]) { // 说明假定的最小值，并不是最小
                     min = arr[j]; // 重置min
                     minIndex = j; // 重置minIndex
