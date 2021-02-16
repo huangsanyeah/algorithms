@@ -13,6 +13,9 @@ public class BubbleSort {
 
         System.out.println("排序前");
         System.out.println(Arrays.toString(arr));
+        bubbleSort2(arr);
+        System.out.println("排序后");
+        System.out.println(Arrays.toString(arr));
 
 
         //为了容量理解，我们把冒泡排序的演变过程，给大家展示
@@ -106,6 +109,24 @@ public class BubbleSort {
                 break;
             } else {
                 flag = false; // 重置flag!!!, 进行下次判断
+            }
+        }
+    }
+
+
+    /**
+     * 手写 联系代码
+     * @param arr
+     */
+    private static void bubbleSort2(int[] arr){
+        for(int i=0;i<arr.length;i++){
+            int temp=0;
+            for (int j=0;j<arr.length-1-i;j++){
+                if(arr[j]>arr[j+1]){
+                    temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
             }
         }
     }
