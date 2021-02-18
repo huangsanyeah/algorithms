@@ -16,7 +16,8 @@ public class QuickSort {
     public static void main(String[] args) {
         int[] arr = {-9, 78, 0, 23, -567, 70, -1, 900, 200};
         System.out.println("排序前的数组是=" + Arrays.toString(arr));
-        quickSort(arr, 0, arr.length - 1);
+        //quickSort(arr, 0, arr.length - 1);
+        qsort(arr, 0, arr.length - 1);
         System.out.println("排序后的数组是=" + Arrays.toString(arr));
 
         //测试快排的执行速度
@@ -93,6 +94,39 @@ public class QuickSort {
         }
     }
 
+
+    /**
+     * 快速排序练习
+     * @param arr
+     * @param low
+     * @param high
+     */
+    private static void qsort(int[] arr, int low, int high){
+        if (low >= high) {
+            return;
+        }
+        int pivot = partition(arr, low, high);        //将数组分为两部分
+        qsort(arr, low, pivot-1);                   //递归排序左子数组
+        qsort(arr, pivot+1, high);                  //递归排序右子数组
+    }
+
+    private static int partition(int[] arr, int low, int high){
+        int pivot = arr[low];     //基准
+        while (low < high){
+            while (low < high && arr[high] >= pivot) {
+                --high;
+            }
+            arr[low]=arr[high];             //交换比基准大的记录到左端
+            while (low < high && arr[low] <= pivot) {
+                ++low;
+            }
+            arr[high] = arr[low];           //交换比基准小的记录到右端
+        }
+        //扫描完成，基准到位
+        arr[low] = pivot;
+        //返回的是基准的位置
+        return low;
+    }
 
 }
 
