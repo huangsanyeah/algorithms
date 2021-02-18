@@ -16,7 +16,8 @@ import java.util.Arrays;
 public class QuickSort {
 
     public static void main(String[] args) {
-        int[] arr = {-9, 78, 0, -23, -567, 70, -1, 30, 200};
+        //int[] arr = {-9, 78, 0, -23, -567, 70, -1, 30, 200};
+        int[] arr = {-1, 2, 0, -9, -6, 3};
         System.out.println("排序前的数组是=" + Arrays.toString(arr));
         //quickSort(arr, 0, arr.length - 1);
         qsort(arr, 0, arr.length - 1);
@@ -111,6 +112,7 @@ public class QuickSort {
         qsort(arr, pivot+1, high);                  //递归排序右子数组
     }
 
+    //  int[] arr = {-1, 2, 0, -9, -6, 3};
     private static int partition(int[] arr, int low, int high){
         int pivot = arr[low];     //基准
         while (low < high){
@@ -118,10 +120,14 @@ public class QuickSort {
                 --high;
             }
             arr[low]=arr[high];             //交换比基准大的记录到左端
+            System.out.println("………………" );
+            System.out.println("数组是=" + Arrays.toString(arr));
             while (low < high && arr[low] <= pivot) {
                 ++low;
             }
             arr[high] = arr[low];           //交换比基准小的记录到右端
+            System.out.println("数组是=" + Arrays.toString(arr));
+            System.out.println("………………" );
         }
         //扫描完成，基准到位
         arr[low] = pivot;
