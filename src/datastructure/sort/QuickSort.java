@@ -2,6 +2,9 @@ package datastructure.sort;
 
 import java.util.Arrays;
 
+/**
+ * O(nlogn)
+ */
 public class QuickSort {
 
     public static void main(String[] args) {
