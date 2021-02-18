@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class InsertSort {
 
     public static void main(String[] args) {
-        //int[] arr = {101, 34, 119, 1, -1, 89};
+        int[] arr = {101, 34, 119, 1, -1, 89};
         // 创建要给80000个的随机的数组
 //        int[] arr = new int[80000];
 //        for (int i = 0; i < 80000; i++) {
@@ -26,8 +26,12 @@ public class InsertSort {
 
         //System.out.println(Arrays.toString(arr));
 
-        testInsertSort();
 
+        //testInsertSort();
+
+        System.out.println(Arrays.toString(arr));
+        insertionSort(arr);
+        System.out.println(Arrays.toString(arr));
 
     }
 
@@ -172,6 +176,21 @@ public class InsertSort {
         arr[insertIndex + 1] = insertVal;
         System.out.println("第3轮插入");
         System.out.println(Arrays.toString(arr));
+    }
+
+    /**
+     * 插入排序练习
+     */
+    public static void insertionSort(int[] arr) {
+        for (int i = 1; i < arr.length; ++i) {
+            int value = arr[i];
+            int position = i;
+            while (position > 0 && arr[position - 1] > value) {
+                arr[position] = arr[position - 1];
+                position--;
+            }
+            arr[position] = value;
+        }//loop i
     }
 
 }
