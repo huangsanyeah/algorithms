@@ -12,7 +12,8 @@ public class ShellSort {
         int[] arr = {8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
         System.out.println("排序前" + Arrays.toString(arr));
         //shellSort(arr); //交换式
-        shellSort2(arr);//移位方式
+        //shellSort2(arr);//移位方式
+        testShellSort(arr);
         System.out.println("排序后" + Arrays.toString(arr));
 
         // 创建要给80000个的随机的数组
@@ -134,6 +135,21 @@ public class ShellSort {
 
             }
         }
+    }
+
+    public static void testShellSort(int[] arr){
+        int temp;
+        //对每个增量进行一次排序
+        for (int delta = arr.length/2; delta>=1; delta/=2){
+            for (int i=delta; i<arr.length; i++){
+                //注意每个地方增量和差值都是delta
+                for (int j=i; j>=delta && arr[j]<arr[j-delta]; j-=delta){
+                    temp = arr[j-delta];
+                    arr[j-delta] = arr[j];
+                    arr[j] = temp;
+                }
+            }//loop i
+        }//loop delta
     }
 
 }
