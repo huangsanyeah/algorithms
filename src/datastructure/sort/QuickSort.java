@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class QuickSort {
 
     public static void main(String[] args) {
-        int[] arr = {-9, 78, 0, 23, -567, 70, -1, 900, 4561};
+        int[] arr = {-9, 78, 0, 23, -567, 70, -1, 900, 200};
         System.out.println("排序前的数组是=" + Arrays.toString(arr));
         quickSort(arr, 0, arr.length - 1);
         System.out.println("排序后的数组是=" + Arrays.toString(arr));
