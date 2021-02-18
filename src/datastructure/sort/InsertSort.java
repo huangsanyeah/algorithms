@@ -37,9 +37,8 @@ public class InsertSort {
 
         //testInsertSort();
 
-        System.out.println(Arrays.toString(arr));
         insertionSort(arr);
-        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
 
     }
 
@@ -188,8 +187,10 @@ public class InsertSort {
 
     /**
      * 插入排序练习
+     * TODO debug 查看每一步
      */
     public static void insertionSort(int[] arr) {
+        System.out.println("入参未排序前：" + Arrays.toString(arr));
         for (int i = 1; i < arr.length; ++i) {
             int value = arr[i];
             int position = i;
@@ -198,7 +199,8 @@ public class InsertSort {
                 position--;
             }
             arr[position] = value;
-        }//loop i
+        }
+        System.out.println("排序前后：" + Arrays.toString(arr));
     }
 
 }
