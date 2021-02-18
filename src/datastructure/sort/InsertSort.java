@@ -195,6 +195,7 @@ public class InsertSort {
             int value = arr[i];
             int position = i;
             while (position > 0 && arr[position - 1] > value) {
+                //前面的数比当前要插入的数大 就往后移动一位，挨个移动 直到把位置找到
                 arr[position] = arr[position - 1];
                 position--;
             }
