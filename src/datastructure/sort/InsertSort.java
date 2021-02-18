@@ -2,6 +2,9 @@ package datastructure.sort;
 
 import java.util.Arrays;
 
+/**
+ * 看下MD中的动图
+ */
 public class InsertSort {
 
     public static void main(String[] args) {
