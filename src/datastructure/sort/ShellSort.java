@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 /**
  * 希尔排序O(n logn)
+ * B站视频：
+ * https://www.bilibili.com/video/BV1rE411g7rW/?spm_id_from=333.788.videocard.0
  */
 public class ShellSort {
 
