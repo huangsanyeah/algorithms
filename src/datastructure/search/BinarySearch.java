@@ -4,7 +4,10 @@ package datastructure.search;
 import java.util.ArrayList;
 import java.util.List;
 
-//TODO 注意：使用二分查找的前提是 该数组是有序的.
+/**
+ * 时间复杂度为O(log n)。（n代表集合中元素的个数）
+ * TODO 注意：使用二分查找的前提是 该数组是有序的.
+ */
 public class BinarySearch {
 
     public static void main(String[] args) {
