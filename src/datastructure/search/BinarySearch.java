@@ -10,14 +10,18 @@ public class BinarySearch {
     public static void main(String[] args) {
         //int arr[] = { 1, 8, 10, 89,1000,1000, 1234 };
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+        //递归方式
+        //int index = binarysearch(arr, 0, arr.length - 1, 12);
+        //非递归方式
+        int index = bsearchWithoutRecursion(arr, 9);
+        System.out.println("index:" + index);
 
 
-        //
 //		int resIndex = binarySearch(arr, 0, arr.length - 1, 1000);
 //		System.out.println("resIndex=" + resIndex);
 
-        List<Integer> resIndexList = binarySearch2(arr, 0, arr.length - 1, 1);
-        System.out.println("resIndexList=" + resIndexList);
+//        List<Integer> resIndexList = binarySearch2(arr, 0, arr.length - 1, 1);
+//        System.out.println("resIndexList=" + resIndexList);
     }
 
     // 二分查找算法
@@ -111,4 +115,44 @@ public class BinarySearch {
         }
 
     }
+
+
+    /**
+     * 二分查找练习 递归方式实现
+     */
+    private static int binarysearch(int[] array, int low, int high, int target) {
+        if (low > high) {
+            return -1;
+        }
+        int mid = low + (high - low) / 2;
+        if (array[mid] > target) {
+            return binarysearch(array, low, mid - 1, target);
+        }
+        if (array[mid] < target) {
+            return binarysearch(array, mid + 1, high, target);
+        }
+        return mid;
+    }
+
+
+    /**
+     * 二分查找练习 非递归
+     */
+    private static int bsearchWithoutRecursion(int[] arr, int key) {
+        int low = 0;
+        int high = arr.length - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (arr[mid] > key) {
+                high = mid - 1;
+            } else if (arr[mid] < key) {
+                low = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return -1;
+    }
+
+
 }
