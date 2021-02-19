@@ -2,6 +2,10 @@ package datastructure.sort;
 
 import java.util.Arrays;
 
+/**
+ * 基数排序（是桶排序的扩展）
+ * 按照个位，十位，百位，千位... 进行循环  排，取，再排
+ */
 public class RadixSort {
 
     public static void main(String[] args) {
