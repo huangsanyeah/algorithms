@@ -119,13 +119,13 @@ public class QuickSort {
             while (low < high && arr[high] >= pivot) {
                 --high;
             }
-            arr[low]=arr[high];             //交换比基准大的记录到左端
+            arr[low]=arr[high];             //交换比基准小的记录到左端
             System.out.println("………………" );
             System.out.println("数组是=" + Arrays.toString(arr));
             while (low < high && arr[low] <= pivot) {
                 ++low;
             }
-            arr[high] = arr[low];           //交换比基准小的记录到右端
+            arr[high] = arr[low];           //交换比基准大的记录到右端
             System.out.println("数组是=" + Arrays.toString(arr));
             System.out.println("………………" );
         }
