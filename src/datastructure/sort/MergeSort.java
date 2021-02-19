@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 /**
  * 归并排序 平均时间复杂度：O(nlogn)
+ * 分，治思想，参考资料中的图
+ * 大的数据分成小的，治就是把数据合并（代码中细分为3步）
  * 示例：
  * https://zhuanlan.zhihu.com/p/124356219
  */
