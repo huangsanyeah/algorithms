@@ -40,30 +40,34 @@ public class MergeSort {
     }
 
 
-    //分+合方法
-    public static void mergeSort(int[] arr, int left, int right, int[] temp) {
+    /**
+     * 分+合方法
+     */
+
+    private static void mergeSort(int[] arr, int left, int right, int[] temp) {
         if (left < right) {
-            int mid = (left + right) / 2; //中间索引
+            //中间索引
+            int mid = (left + right) / 2;
             //向左递归进行分解
             mergeSort(arr, left, mid, temp);
             //向右递归进行分解
             mergeSort(arr, mid + 1, right, temp);
             //合并
             merge(arr, left, mid, right, temp);
-
         }
     }
 
 
     /**
      * 合并的方法，即不断地通过tmp数组来排序，合并，并且赋值回原数组的过错
+     *
      * @param arr   排序的原始数组
      * @param left  左边有序序列的初始索引
      * @param mid   中间索引
      * @param right 右边索引
      * @param temp  做中转的数组
      */
-    public static void merge(int[] arr, int left, int mid, int right, int[] temp) {
+    private static void merge(int[] arr, int left, int mid, int right, int[] temp) {
 
         // 初始化i, 左边有序序列的初始索引
         int i = left;
