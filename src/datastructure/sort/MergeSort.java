@@ -7,12 +7,13 @@ import java.util.Arrays;
  * 示例：
  * https://zhuanlan.zhihu.com/p/124356219
  */
-public class MergetSort {
+public class MergeSort {
 
     public static void main(String[] args) {
         int[] arr = {8, 4, 5, 7, 1, 3, 6, 2};
         System.out.println("归并排序前=" + Arrays.toString(arr));
-        int[] temp = new int[arr.length]; //归并排序需要一个额外空间
+        //归并排序需要一个额外空间
+        int[] temp = new int[arr.length];
         mergeSort(arr, 0, arr.length - 1, temp);
         System.out.println("归并排序后=" + Arrays.toString(arr));
 
@@ -53,9 +54,9 @@ public class MergetSort {
         }
     }
 
-    //合并的方法
 
     /**
+     * 合并的方法，即不断地通过tmp数组来排序，合并，并且赋值回原数组的过错
      * @param arr   排序的原始数组
      * @param left  左边有序序列的初始索引
      * @param mid   中间索引
@@ -64,14 +65,17 @@ public class MergetSort {
      */
     public static void merge(int[] arr, int left, int mid, int right, int[] temp) {
 
-        int i = left; // 初始化i, 左边有序序列的初始索引
-        int j = mid + 1; //初始化j, 右边有序序列的初始索引
-        int t = 0; // 指向temp数组的当前索引
+        // 初始化i, 左边有序序列的初始索引
+        int i = left;
+        //初始化j, 右边有序序列的初始索引
+        int j = mid + 1;
+        // 指向temp数组的当前索引
+        int t = 0;
 
         //(一)
         //先把左右两边(有序)的数据按照规则填充到temp数组
         //直到左右两边的有序序列，有一边处理完毕为止
-        while (i <= mid && j <= right) {//继续
+        while (i <= mid && j <= right) {
             //如果左边的有序序列的当前元素，小于等于右边有序序列的当前元素
             //即将左边的当前元素，填充到 temp数组
             //然后 t++, i++
@@ -88,13 +92,15 @@ public class MergetSort {
 
         //(二)
         //把有剩余数据的一边的数据依次全部填充到temp
-        while (i <= mid) { //左边的有序序列还有剩余的元素，就全部填充到temp
+        //左边的有序序列还有剩余的元素，就全部填充到temp
+        while (i <= mid) {
             temp[t] = arr[i];
             t += 1;
             i += 1;
         }
 
-        while (j <= right) { //右边的有序序列还有剩余的元素，就全部填充到temp
+        //右边的有序序列还有剩余的元素，就全部填充到temp
+        while (j <= right) {
             temp[t] = arr[j];
             t += 1;
             j += 1;
@@ -103,11 +109,11 @@ public class MergetSort {
 
         //(三)
         //将temp数组的元素拷贝到arr
-        //注意，并不是每次都拷贝所有
+        //注意，需要拷贝多次，8个元素拷贝7次，并不是每次都拷贝所有，最后一次才会拷贝所有的
         t = 0;
-        int tempLeft = left; //
+        int tempLeft = left;
         //第一次合并 tempLeft = 0 , right = 1 //  tempLeft = 2  right = 3 // tL=0 ri=3
-        //最后一次 tempLeft = 0  right = 7
+        //最后一次 tempLeft = 0  right = 7 就是所有的数据全部拷贝  这个地方看图PPT/PDF理解
         while (tempLeft <= right) {
             arr[tempLeft] = temp[t];
             t += 1;
