@@ -10,6 +10,8 @@ import java.util.Arrays;
  * 3.递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序。
  * 动图：
  * https://www.xuebuyuan.com/2109322.html
+ * 挖坑交换讲解：
+ * https://www.cxyxiaowu.com/5262.html
  * B站视频（秒懂算法）：
  * https://www.bilibili.com/video/BV1at411T75o?from=search&seid=16489477606521879804
  */
@@ -17,7 +19,7 @@ public class QuickSort {
 
     public static void main(String[] args) {
         //int[] arr = {-9, 78, 0, -23, -567, 70, -1, 30, 200};
-        int[] arr = {-1, 2, 0, -9, -6, 3};
+        int[] arr = {0, 2, -1, -9, -6, 3};
         System.out.println("排序前的数组是=" + Arrays.toString(arr));
         //quickSort(arr, 0, arr.length - 1);
         qsort(arr, 0, arr.length - 1);
@@ -112,7 +114,7 @@ public class QuickSort {
         qsort(arr, pivot+1, high);                  //递归排序右子数组
     }
 
-    //  int[] arr = {-1, 2, 0, -9, -6, 3};
+    //  int[] arr = {0, 2, -1, -9, -6, 3};
     private static int partition(int[] arr, int low, int high){
         int pivot = arr[low];     //基准
         while (low < high){
