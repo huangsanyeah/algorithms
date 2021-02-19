@@ -33,7 +33,9 @@ public class RecursionTest {
         System.out.println(s.toString().length());
     }
 
-    //打印问题.
+    /**
+     * TODO 打印问题,注意打印的结果，体现了递归的思想 入栈然后出栈入栈是4,3,2 打印输出结果是2，3,4
+     */
     private static void test(int n) {
         if (n > 2) {
             //如果要改为n+1 就违背了递归必须向退出递归的条件逼近这一原则，无限循环抛出异常
