@@ -4,7 +4,7 @@ package datastructure.search;
 import java.util.ArrayList;
 import java.util.List;
 
-//注意：使用二分查找的前提是 该数组是有序的.
+//TODO 注意：使用二分查找的前提是 该数组是有序的.
 public class BinarySearch {
 
     public static void main(String[] args) {
