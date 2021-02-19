@@ -3,14 +3,16 @@ package datastructure.sort;
 import java.util.Arrays;
 
 /**
- * 归并排序
+ * 归并排序 平均时间复杂度：O(nlogn)
+ * 示例：
+ * https://zhuanlan.zhihu.com/p/124356219
  */
 public class MergetSort {
 
     public static void main(String[] args) {
-        int arr[] = {8, 4, 5, 7, 1, 3, 6, 2};
+        int[] arr = {8, 4, 5, 7, 1, 3, 6, 2};
         System.out.println("归并排序前=" + Arrays.toString(arr));
-        int temp[] = new int[arr.length]; //归并排序需要一个额外空间
+        int[] temp = new int[arr.length]; //归并排序需要一个额外空间
         mergeSort(arr, 0, arr.length - 1, temp);
         System.out.println("归并排序后=" + Arrays.toString(arr));
 
@@ -113,5 +115,16 @@ public class MergetSort {
         }
 
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
