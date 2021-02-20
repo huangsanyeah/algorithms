@@ -8,6 +8,8 @@ import java.util.List;
 /**
  * 时间复杂度为O(log n)。（n代表集合中元素的个数）
  * TODO 注意：使用二分查找的前提是 该数组是有序的 即有从小到大或者从大到小的顺序.
+ * FIXME 注意:  mid的取值 int mid = low + (high - low) / 2;
+ * 参考：https://leomalik.github.io/
  */
 public class BinarySearch {
 
@@ -133,6 +135,7 @@ public class BinarySearch {
         if (low > high) {
             return -1;
         }
+        //FIXME !!! left + ((right -left) >> 1) 其实和 (left + right) / 2是等价的，这样写的目的一个是为了防止 (left + right)出现溢出，一个是用右移操作替代除法提升性能
         int mid = low + (high - low) / 2;
         if (array[mid] > target) {
             return binarysearch(array, low, mid - 1, target);
