@@ -7,20 +7,22 @@ import java.util.List;
 
 /**
  * 时间复杂度为O(log n)。（n代表集合中元素的个数）
- * TODO 注意：使用二分查找的前提是 该数组是有序的.
+ * TODO 注意：使用二分查找的前提是 该数组是有序的 即有从小到大或者从大到小的顺序.
  */
 public class BinarySearch {
 
     public static void main(String[] args) {
         //int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
 
-        int arr[] = {1, 8, 10, 89, 1000, 1000, 1234};
+        int[] arr = {1, 8, 10, 89, 1000, 1200, 1234};
         //递归方式
-        //int index = binarysearch(arr, 0, arr.length - 1, 12);
+        int index = binarysearch(arr, 0, arr.length - 1, 1200);
         //非递归方式
-        //int index = bsearchWithoutRecursion(arr, 8);
+        //int index = bsearchWithoutRecursion(arr, 1200);
+        //JDK工具类实现
         //int index = testJdkBinarySearch();
-        int index = indexedBinarySearch(7);
+        //JDK工具类源码实现
+        //int index = indexedBinarySearch(1200);
         System.out.println("index:" + index);
 
 
@@ -149,7 +151,7 @@ public class BinarySearch {
         int low = 0;
         int high = arr.length - 1;
         while (low <= high) {
-            int mid = low + (high - low) / 2;
+            int mid = (low + high) / 2;
             if (arr[mid] > key) {
                 high = mid - 1;
             } else if (arr[mid] < key) {
