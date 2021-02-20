@@ -17,7 +17,7 @@ public class BinarySearch {
         //递归方式
         //int index = binarysearch(arr, 0, arr.length - 1, 12);
         //非递归方式
-        int index = bsearchWithoutRecursion(arr, 89);
+        int index = bsearchWithoutRecursion(arr, 8);
         System.out.println("index:" + index);
 
 
