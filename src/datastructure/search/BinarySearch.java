@@ -2,6 +2,7 @@ package datastructure.search;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -13,11 +14,13 @@ public class BinarySearch {
     public static void main(String[] args) {
         //int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
 
-        int arr[] = { 1, 8, 10, 89,1000,1000, 1234 };
+        int arr[] = {1, 8, 10, 89, 1000, 1000, 1234};
         //递归方式
         //int index = binarysearch(arr, 0, arr.length - 1, 12);
         //非递归方式
-        int index = bsearchWithoutRecursion(arr, 8);
+        //int index = bsearchWithoutRecursion(arr, 8);
+        //int index = testJdkBinarySearch();
+        int index = indexedBinarySearch(7);
         System.out.println("index:" + index);
 
 
@@ -158,5 +161,46 @@ public class BinarySearch {
         return -1;
     }
 
+
+    /**
+     * JDK工具类中的二分法
+     */
+    public static int testJdkBinarySearch() {
+        List<Integer> list = new ArrayList<>();
+        list.add(3);
+        list.add(5);
+        list.add(7);
+        list.add(2);
+        return Collections.binarySearch(list, 7);
+    }
+
+
+    /**
+     * Collections.binarySearch内部实现，copy自其源码
+     */
+    public static int indexedBinarySearch(Integer key) {
+        List<Integer> list = new ArrayList<>();
+        list.add(3);
+        list.add(7);
+        list.add(5);
+        list.add(2);
+        int low = 0;
+        int high = list.size() - 1;
+
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            Integer midVal = list.get(mid);
+            int cmp = midVal.compareTo(key);
+
+            if (cmp < 0) {
+                low = mid + 1;
+            } else if (cmp > 0) {
+                high = mid - 1;
+            } else {
+                return mid; // key found
+            }
+        }
+        return -(low + 1);  // key not found
+    }
 
 }
