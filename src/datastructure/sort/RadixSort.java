@@ -15,7 +15,7 @@ public class RadixSort {
         int[] arr = {53, 3, 542, 748, 14, 214};
         System.out.println("基数排序前 " + Arrays.toString(arr));
         radixSort(arr);
-        // 80000000 * 11 * 4 / 1024 / 1024 / 1024 =3.3G
+        //FIXME 注意这里面的内存占用 因为需要耗费额外的空间  80000000 * 11 * 4 / 1024 / 1024 / 1024 =3.3G
 //		int[] arr = new int[8000000];
 //		for (int i = 0; i < 8000000; i++) {
 //			arr[i] = (int) (Math.random() * 8000000); // 生成一个[0, 8000000) 数
