@@ -3,7 +3,7 @@ package datastructure.sort;
 import java.util.Arrays;
 
 /**
- * 基数排序（是桶排序的扩展）
+ * 基数排序（是桶排序的扩展） 空间换时间的算法
  * 按照个位，十位，百位，千位... 进行循环  排，取，再排
  */
 public class RadixSort {
