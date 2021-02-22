@@ -1,5 +1,29 @@
 package datastructure.search;
 
+/**
+ * 插值查找
+ * 插值查找算法的 举例说明
+ *
+ * 数组  arr = [1, 2, 3, ......., 100]
+ *
+ * 假如我们需要查找的值  1
+ *
+ * 使用二分查找的话，我们需要多次递归，才能找到 1
+ *
+ * 使用插值查找算法
+ * int mid = left + (right – left) * (findVal – arr[left]) / (arr[right] – arr[left])
+ *
+ * int mid = 0 + (99 - 0) * (1 - 1)/ (100 - 1) = 0 + 99 * 0 / 99 = 0
+ *
+ * 比如我们查找的值 100
+ *
+ * int mid = 0 + (99 - 0) * (100 - 1) / (100 - 1) = 0 + 99 * 99 / 99 = 0 + 99 = 99
+ *
+ * 插值查找注意事项：
+ *
+ * 对于数据量较大，关键字分布比较均匀的查找表来说，采用插值查找, 速度较快.
+ * 关键字分布不均匀的情况下，该方法不一定比折半查找要好
+ */
 public class InsertValueSearch {
 
     public static void main(String[] args) {
