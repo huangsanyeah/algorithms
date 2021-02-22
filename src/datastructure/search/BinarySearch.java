@@ -7,6 +7,16 @@ import java.util.List;
 
 /**
  * 时间复杂度为O(log n)。（n代表集合中元素的个数）
+ * 二分查找的思路分析
+ * 1. 首先确定该数组的中间的下标
+ * mid = (left + right) / 2
+ * 2. 然后让需要查找的数 findVal 和 arr[mid] 比较
+ * 2. 1 findVal > arr[mid] ,  说明你要查找的数在mid 的右边, 因此需要递归的向右查找
+ * 2.2 findVal < arr[mid], 说明你要查找的数在mid 的左边, 因此需要递归的向左查找
+ * 2.3  findVal == arr[mid] 说明找到，就返回
+ * 什么时候我们需要结束递归.
+ * 1) 找到就结束递归
+ * 2) 递归完整个数组，仍然没有找到findVal ，也需要结束递归  当 left > right 就需要退出
  * TODO 注意：使用二分查找的前提是 该数组是有序的 即有从小到大或者从大到小的顺序.
  * FIXME 注意:  mid的取值 int mid = low + (high - low) / 2;
  * 参考：https://leomalik.github.io/
