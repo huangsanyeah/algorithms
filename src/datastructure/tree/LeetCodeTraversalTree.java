@@ -26,6 +26,16 @@ public class LeetCodeTraversalTree {
     }
 
 
+    /**
+     * 先取根节点的值，再遍历左子树，再遍历右子树
+     * 步骤：
+     * 步骤一：取根节点的值
+     * 步骤二：遍历左子树
+     * 步骤三：遍历右子树
+     *
+     * @param root
+     * @return
+     */
     public static List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         Stack<TreeNode> s = new Stack<>();
@@ -44,6 +54,16 @@ public class LeetCodeTraversalTree {
     }
 
 
+    /**
+     * 先遍历左子树，再取根节点的值，再遍历右子树
+     * 步骤：
+     * 步骤一：遍历左子树
+     * 步骤二：取根节点的值
+     * 步骤三：遍历右子树
+     *
+     * @param root
+     * @return
+     */
     public static List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
@@ -61,6 +81,16 @@ public class LeetCodeTraversalTree {
         return res;
     }
 
+    /**
+     * 先遍历左子树，再遍历右子树，最后取根节点的值
+     * 步骤：(对主要思想里边的步骤逆序处理)
+     * 步骤一：取根节点的值，插入list最后边
+     * 步骤二：遍历右子树
+     * 步骤三：遍历左子树
+     *
+     * @param root
+     * @return
+     */
     // 前序遍历顺序为：根 -> 左 -> 右
     // 后序遍历顺序为：左 -> 右 -> 根
     // 所以, 我们可以把前序遍历的稍作修改: 根 -> 右 -> 左,
@@ -108,21 +138,3 @@ class TreeNode {
     }
 }
 
-
-/*
-class Solution {
-    public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
-        preorder(root, res);
-        return res;
-    }
-
-    public void preorder(TreeNode root, List<Integer> res) {
-        if (root == null) {
-            return;
-        }
-        res.add(root.val);
-        preorder(root.left, res);
-        preorder(root.right, res);
-    }
-}*/
