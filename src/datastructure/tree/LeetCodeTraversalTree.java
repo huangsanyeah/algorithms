@@ -12,15 +12,16 @@ import java.util.Stack;
 public class LeetCodeTraversalTree {
     public static void main(String[] args) {
         //复杂版
-//        TreeNode left=new TreeNode(3,new TreeNode(2),new TreeNode(4));
-//        TreeNode right=new TreeNode(6,new TreeNode(5),new TreeNode(11));
-//        TreeNode root=new TreeNode(0,left,right);
+        TreeNode left=new TreeNode(3,new TreeNode(2),new TreeNode(4));
+        TreeNode right=new TreeNode(6,new TreeNode(5),new TreeNode(11));
+        TreeNode root=new TreeNode(0,left,right);
 
         //简化版
-        TreeNode root = new TreeNode(0, new TreeNode(1), new TreeNode(2));
+//        TreeNode root = new TreeNode(0, new TreeNode(1), new TreeNode(2));
 
         //List<Integer> list = preorderTraversal(root);
         //List<Integer> list = inorderTraversal(root);
+        //复杂版输出 [2, 4, 3, 5, 11, 6, 0]
         List<Integer> list = postorderTraversal(root);
         System.out.println(list);
     }
