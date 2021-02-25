@@ -132,7 +132,7 @@ class BinaryTree {
         }
     }
 
-    //前序遍历
+    //前序遍历查找
     public HeroNode preOrderSearch(int no) {
         if (root != null) {
             return root.preOrderSearch(no);
@@ -141,7 +141,7 @@ class BinaryTree {
         }
     }
 
-    //中序遍历
+    //中序遍历查找
     public HeroNode infixOrderSearch(int no) {
         if (root != null) {
             return root.infixOrderSearch(no);
@@ -150,7 +150,7 @@ class BinaryTree {
         }
     }
 
-    //后序遍历
+    //后序遍历查找
     public HeroNode postOrderSearch(int no) {
         if (root != null) {
             return this.root.postOrderSearch(no);
