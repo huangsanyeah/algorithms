@@ -5,6 +5,14 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 
+/**
+ * 堆排序 实际上是在树的应用章节讲的 属于排序 所以源码放到此package先
+ * 堆排序的基本思想是：
+ * 1.将待排序序列构造成一个大顶堆（小顶堆就是从小到大排序），此时，整个序列的最大值就是堆顶的根节点。
+ * 2.将其与末尾元素进行交换，此时末尾就为最大值。
+ * 3.然后将剩余n-1个元素重新构造成一个堆，这样会得到n个元素的次小值。如此反复执行，便能得到一个有序序列了。
+ * 可以看到在构建大顶堆的过程中，元素的个数逐渐减少，最后就得到一个有序序列了.
+ */
 public class HeapSort {
 
     public static void main(String[] args) {
