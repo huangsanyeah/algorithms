@@ -98,7 +98,7 @@ public class HeapSort {
             }
             if (arr[k] > temp) { //如果子结点大于父结点
                 arr[i] = arr[k]; //把较大的值赋给当前结点
-                i = k; //!!! i 指向 k,继续循环比较
+                i = k; //TODO 重点!!! i 指向 k,继续循环比较
             } else {
                 break;//!
             }
