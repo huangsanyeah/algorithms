@@ -3,7 +3,7 @@ package top10algorithms.divideandconquer;
 public class Hanoitower {
 
     public static void main(String[] args) {
-        hanoiTower(10, 'A', 'B', 'C');
+        hanoiTower(3, 'A', 'B', 'C');
     }
 
     //汉诺塔的移动的方法
