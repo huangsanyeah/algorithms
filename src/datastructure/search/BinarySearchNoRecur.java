@@ -1,7 +1,7 @@
 package datastructure.search;
 
 /**
- * 二分查找非递归实现
+ * 二分查找非递归实现，升序排列
  */
 public class BinarySearchNoRecur {
 
